@@ -14,7 +14,23 @@ We help companies build, run, deploy and scale software and infrastructure by em
 Terraform module which sets up AWS Organization in the root account.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-Error: no lines in file
+## Requirements
+
+No requirements.
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| organization\_accounts | Map of organization accounts to create. The map key is the name of the account and the value is an object containing account configuration variables. | `any` | n/a | yes |
+| organization\_aws\_service\_access\_principals | n/a | `list` | <pre>[<br>  "cloudtrail.amazonaws.com",<br>  "sso.amazonaws.com"<br>]</pre> | no |
+| organization\_feature\_set | n/a | `string` | `"ALL"` | no |
+| organization\_units | Create flat organization units | `list(string)` | <pre>[<br>  "default"<br>]</pre> | no |
+
+## Outputs
+
+No output.
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Contributing and reporting issues
