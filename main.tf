@@ -19,8 +19,10 @@ data "aws_organizations_organizational_units" "ous" {
 }
 
 resource "aws_organizations_account" "accounts" {
-  for_each  = var.organization_accounts
-  name      = each.key
-  email     = each.value.email
-  parent_id = lookup(local.aws_organizations_units_map, lookup(each.value, "parent_name", null), null)
+  for_each                   = var.organization_accounts
+  name                       = each.key
+  email                      = each.value.email
+  parent_id                  = lookup(local.aws_organizations_units_map, lookup(each.value, "parent_name", null), null)
+  iam_user_access_to_billing = lookup(each.value, "iam_user_access_to_billing", null)
+  tags                       = lookup(each.value, "tags", null)
 }
