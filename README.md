@@ -33,6 +33,7 @@ No requirements.
 | Name | Description |
 |------|-------------|
 | organization\_all\_accounts | n/a |
+| organization\_all\_organizational\_units | n/a |
 | organization\_master\_account\_id | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
