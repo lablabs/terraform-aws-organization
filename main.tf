@@ -6,6 +6,7 @@ locals {
 resource "aws_organizations_organization" "org" {
   aws_service_access_principals = var.organization_aws_service_access_principals
   feature_set                   = var.organization_feature_set
+  enabled_policy_types          = var.organization_enabled_policy_types
 }
 
 resource "aws_organizations_organizational_unit" "ous" {

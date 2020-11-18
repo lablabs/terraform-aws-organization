@@ -9,7 +9,13 @@ variable "organization_feature_set" {
   default = "ALL"
 }
 
-# Nasted organization unit structure is not allowed here
+variable "organization_enabled_policy_types" {
+  default = [
+    "SERVICE_CONTROL_POLICY"
+  ]
+}
+
+# Nested organization unit structure is not allowed here
 variable "organization_units" {
   description = "Create flat organization units"
   type        = list(string)
