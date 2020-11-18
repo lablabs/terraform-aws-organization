@@ -24,6 +24,7 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | organization\_accounts | Map of organization accounts to create. The map key is the name of the account and the value is an object containing account configuration variables. | `any` | n/a | yes |
 | organization\_aws\_service\_access\_principals | n/a | `list` | <pre>[<br>  "cloudtrail.amazonaws.com",<br>  "sso.amazonaws.com"<br>]</pre> | no |
+| organization\_enabled\_policy\_types | n/a | `list` | <pre>[<br>  "SERVICE_CONTROL_POLICY"<br>]</pre> | no |
 | organization\_feature\_set | n/a | `string` | `"ALL"` | no |
 | organization\_units | Create flat organization units | `list(string)` | <pre>[<br>  "default"<br>]</pre> | no |
 

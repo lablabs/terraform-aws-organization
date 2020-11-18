@@ -9,6 +9,7 @@ on:
 env:
   TERRAFORM_DOCS_VERSION: "v0.9.1"
   TFLINT_VERSION: "v0.16.2"
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
 
 jobs:
   terraform-validation:
