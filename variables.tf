@@ -7,16 +7,19 @@ variable "organization_aws_service_access_principals" {
 
 variable "organization_feature_set" {
   description = "Specify ALL or CONSOLIDATED_BILLING"
+  type        = string
   default     = "ALL"
 }
 
-variable "organization_policy_types" {
+variable "organization_enabled_policy_types" {
   description = "List of Organizations policy types to enable in the Organization Root. Organization must have feature_set set to ALL. For additional information about valid policy types (e.g. AISERVICES_OPT_OUT_POLICY, BACKUP_POLICY, SERVICE_CONTROL_POLICY, and TAG_POLICY"
   type        = list(string)
-  default     = ["SERVICE_CONTROL_POLICY"]
+  default = [
+    "SERVICE_CONTROL_POLICY"
+  ]
 }
 
-# Nasted organization unit structure is not allowed here
+# Nested organization unit structure is not allowed here
 variable "organization_units" {
   description = "Create flat organization units"
   type        = list(string)
