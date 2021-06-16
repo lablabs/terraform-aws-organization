@@ -45,7 +45,11 @@ No Modules.
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| aws\_organizations\_account | Map of the organization accounts attributes where key is account name |
+| aws\_organizations\_organizational\_unit | Map of the organization units attributes where key is ou name |
+| organization | AWS organization attributes |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Contributing and reporting issues
