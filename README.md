@@ -16,7 +16,22 @@ Terraform module which sets up AWS Organization in the root account.
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13 |
+| aws | >= 2.0 |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [aws_organizations_account](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_account) |
+| [aws_organizations_organization](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_organization) |
+| [aws_organizations_organizational_unit](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_organizational_unit) |
 
 ## Inputs
 
@@ -24,18 +39,20 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | organization\_accounts | Map of organization accounts to create. The map key is the name of the account and the value is an object containing account configuration variables. | `any` | n/a | yes |
 | organization\_aws\_service\_access\_principals | n/a | `list` | <pre>[<br>  "cloudtrail.amazonaws.com",<br>  "sso.amazonaws.com"<br>]</pre> | no |
-| organization\_enabled\_policy\_types | n/a | `list` | <pre>[<br>  "SERVICE_CONTROL_POLICY"<br>]</pre> | no |
-| organization\_feature\_set | n/a | `string` | `"ALL"` | no |
+| organization\_enabled\_policy\_types | List of Organizations policy types to enable in the Organization Root. Organization must have feature\_set set to ALL. For additional information about valid policy types (e.g. AISERVICES\_OPT\_OUT\_POLICY, BACKUP\_POLICY, SERVICE\_CONTROL\_POLICY, and TAG\_POLICY | `list(string)` | <pre>[<br>  "SERVICE_CONTROL_POLICY"<br>]</pre> | no |
+| organization\_feature\_set | Specify ALL or CONSOLIDATED\_BILLING | `string` | `"ALL"` | no |
 | organization\_units | Create flat organization units | `list(string)` | <pre>[<br>  "default"<br>]</pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| organization\_all\_accounts | n/a |
-| organization\_all\_organizational\_units | n/a |
-| organization\_master\_account\_id | n/a |
-
+| aws\_organizations\_account | Map of the organization accounts attributes where key is account name |
+| aws\_organizations\_organizational\_unit | Map of the organization units attributes where key is ou name |
+| organization | AWS organization attributes |
+| organization\_all\_accounts | Map of the organization units attributes where key is account name |
+| organization\_all\_organizational\_units | Map of the organization units attributes where key is ou name |
+| organization\_master\_account\_id | Management account id |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Contributing and reporting issues

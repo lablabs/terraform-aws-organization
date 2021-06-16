@@ -20,7 +20,7 @@ repos:
     - id: terraform_fmt
     - id: terraform_docs
       args:
-        - '--args=--no-providers --sort-by-required'
+        - '--args=--hide providers --sort-by-required'
 
   - repo: git://github.com/pecigonzalo/pre-commit-terraform-vars
     rev: 8e947e99c45314397a8caacebefab44d74227b6b
